@@ -1,0 +1,8 @@
+layzadev\github\io\rest\ClientController.class
+layzadev\github\io\model\repository\ClientRepository.class
+layzadev\github\io\model\entity\Service.class
+layzadev\github\io\model\entity\Client.class
+layzadev\github\io\config\InternationalizationConfig.class
+layzadev\github\io\model\repository\ServiceRepository.class
+layzadev\github\io\ClientsApplication.class
+layzadev\github\io\model\entity\Client$ClientBuilder.class
