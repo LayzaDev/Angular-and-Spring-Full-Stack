@@ -11,15 +11,21 @@ import { ClientsService } from 'src/app/clients.service';
 export class ClientsFormComponent implements OnInit {
 
   client: Client;
+  success: boolean = false;
+  errors: String[];
 
   constructor( private service : ClientsService) {
-    this.client = service.getClient();
+    this.client = new Client();
   }
 
   ngOnInit(): void {}
 
   onSubmit(){
-    console.log(this.client);
+    this.service
+      .save(this.client)
+      .subscribe(response => {
+        this.success = true;
+      });
   }
 
 }

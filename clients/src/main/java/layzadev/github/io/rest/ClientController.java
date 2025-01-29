@@ -12,6 +12,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/clients")
+@CrossOrigin("http://localhost:4200")
 public class ClientController {
     private final ClientRepository repository;
 
