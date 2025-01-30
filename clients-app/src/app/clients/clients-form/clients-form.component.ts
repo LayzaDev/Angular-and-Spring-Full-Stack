@@ -14,7 +14,7 @@ export class ClientsFormComponent implements OnInit {
   success: boolean = false;
   errors: String[];
 
-  constructor( private service : ClientsService) {
+  constructor( private service : ClientsService ) {
     this.client = new Client();
   }
 
@@ -25,7 +25,12 @@ export class ClientsFormComponent implements OnInit {
       .save(this.client)
       .subscribe(response => {
         this.success = true;
-      });
+        this.errors = null;
+        this.client = response;
+      }, errorResponse => {
+        this.success = false;
+        this.errors = errorResponse.error.errors;
+      })
   }
 
 }
