@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -19,6 +20,11 @@ public class ClientController {
     @Autowired
     public ClientController(ClientRepository repository) {
         this.repository = repository;
+    }
+
+    @GetMapping
+    public List<Client> getAll(){
+        return repository.findAll();
     }
 
     @PostMapping
